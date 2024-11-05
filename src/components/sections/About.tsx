@@ -58,7 +58,7 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            With over 5 years of experience in software development, I've cultivated a deep 
+            With over 8.5 years of experience in software development, I've cultivated a deep 
             understanding of the full development lifecycle, from concept to deployment. My 
             journey has taken me through various roles at prominent companies like LexisNexis 
             and Motorola Solutions, where I've consistently delivered high-impact solutions.
