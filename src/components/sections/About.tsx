@@ -32,7 +32,7 @@ const About: React.FC = () => {
   ];
 
   const achievements = [
-    { number: "5+", label: "Years of Experience" },
+    { number: "8.5+", label: "Years of Experience" },
     { number: "20+", label: "Projects Completed" },
     { number: "85%", label: "Performance Improvements" },
     { number: "28%", label: "User Engagement Increase" }

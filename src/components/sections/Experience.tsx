@@ -61,7 +61,7 @@ const Experience: React.FC = () => {
       period: "Dec 2015 - Aug 2021",
       icon: <FaBriefcase className="w-6 h-6" />,
       achievements: [
-        "Collaborated with cross-functional teams for successful prototyping at Dow Chemicals",
+        "Collaborated with cross-functional teams for successful prototyping at Dow Chemical",
         "Engineered scalable REST APIs using Entity Framework in .NET Core and .NET Framework",
         "Built Dependency Injection, optimizing application architecture by 25%",
         "Conducted database query optimization, improving performance by 35%",
