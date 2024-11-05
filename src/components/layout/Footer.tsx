@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import {  Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -19,7 +19,6 @@ const Footer = () => {
           </div>
 
           <div className="flex space-x-6">
-            <SocialLink href="https://github.com" icon={<Github size={20} />} />
             <SocialLink href="http://www.linkedin.com/in/jinal-mamaniya" icon={<Linkedin size={20} />} />
             <SocialLink href="mailto:jmamaniya2022@gmail.com" icon={<Mail size={20} />} />
           </div>

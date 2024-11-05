@@ -1,7 +1,7 @@
 // src/components/sections/Hero.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 
 const Hero: React.FC = () => {
@@ -52,11 +52,19 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <SocialLink
-              href="https://github.com/yourusername"
-              icon={<FaGithub className="w-6 h-6" />}
-              label="GitHub"
-            />
+                        <motion.a
+              href="/my-portfolio/Jinal_Mamaniya_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg
+                       hover:bg-primary-700 transition-all duration-300 shadow-md"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaFileDownload className="w-5 h-5" />
+              View Resume
+            </motion.a>
+
             <SocialLink
               href="http://www.linkedin.com/in/jinal-mamaniya"
               icon={<FaLinkedin className="w-6 h-6" />}

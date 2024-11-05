@@ -4,7 +4,8 @@ import About from './components/sections/About'
 import Skills from './components/sections/Skills'
 import Experience from './components/sections/Experience'
 import Contact from './components/sections/Contact'
-import Footer from './components/layout/footer'
+import Footer from './components/layout/Footer'
+import FloatingResumeButton from './components/shared/FloatingResumeButton'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingResumeButton />
     </div>
   )
 }
