@@ -1,7 +1,7 @@
 // src/components/sections/Hero.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaFileDownload, FaLinkedin } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 
 const Hero: React.FC = () => {
