@@ -2,6 +2,7 @@
   "name": "my-portfolio",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "homepage": "https://jmamaniya.github.io/my-portfolio",
   "scripts": {
     "dev": "vite",
