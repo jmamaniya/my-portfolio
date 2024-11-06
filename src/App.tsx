@@ -6,6 +6,8 @@ import Experience from './components/sections/Experience'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 import FloatingResumeButton from './components/shared/FloatingResumeButton'
+import Education from './components/sections/Education'
+import Certifications from './components/sections/Certifications'
 
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
+        <Education />
+        <Certifications /> 
         <Experience />
+        <Skills />     
         <Contact />
       </main>
       <Footer />

@@ -126,21 +126,6 @@ const About: React.FC = () => {
           ))}
         </div>
 
-        {/* Education */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold mb-4">Education</h3>
-          <p className="text-gray-600">
-            Master of Science in Information Systems - Northeastern University (GPA: 3.75)
-          </p>
-          <p className="text-gray-600">
-            Bachelor of Engineering in Information Technology - Mumbai University
-          </p>
-        </motion.div>
       </div>
     </section>
   );

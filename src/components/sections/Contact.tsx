@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
 
 interface ContactItemProps {
   icon: React.ReactNode;
@@ -56,12 +56,6 @@ const Contact: React.FC = () => {
                 title="LinkedIn"
                 content="Connect with me"
                 href="http://www.linkedin.com/in/jinal-mamaniya"
-              />
-              <ContactItem 
-                icon={<Github className="w-5 h-5" />}
-                title="GitHub"
-                content="View my projects"
-                href="https://github.com/jmamaniya"
               />
               <ContactItem 
                 icon={<MapPin className="w-5 h-5" />}

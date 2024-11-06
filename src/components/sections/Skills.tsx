@@ -1,76 +1,139 @@
 // src/components/sections/Skills.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaLayerGroup } from 'react-icons/fa';
-import { SiDocker } from 'react-icons/si';
+import { 
+  FaCode, 
+  FaTools, 
+  FaDatabase, 
+  FaCloud,
+  FaLayerGroup,
+  FaCheckCircle 
+} from 'react-icons/fa';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: "Programming",
+      title: "Programming & Core",
       icon: <FaCode className="w-6 h-6" />,
-      skills: ['C#', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'LINQ', 'Angular', 'GraphQL']
+      skills: [
+        { name: "C#", level: "Expert" },
+        { name: "JavaScript", level: "Expert" },
+        { name: "TypeScript", level: "Expert" },
+        { name: "HTML5", level: "Expert" },
+        { name: "CSS3", level: "Expert" },
+        { name: "LINQ", level: "Advanced" }
+      ]
     },
     {
-      title: "Frameworks",
+      title: "Frameworks & Libraries",
       icon: <FaLayerGroup className="w-6 h-6" />,
-      skills: ['.NET', '.NET Core', 'Entity Framework', 'Bootstrap', 'WPF']
+      skills: [
+        { name: "Angular", level: "Expert" },
+        { name: ".NET Core", level: "Expert" },
+        { name: ".NET MVC", level: "Expert" },
+        { name: "REST API", level: "Expert" },
+        { name: "Entity Framework", level: "Expert" },
+        { name: "GraphQL", level: "Advanced" },
+        { name: "Node.js", level: "Advanced" },
+        { name: "SOAP API", level: "Advanced" },
+        { name: "Bootstrap", level: "Advanced" },
+        { name: "WPF", level: "Advanced" }
+      ]
     },
     {
-      title: "DevOps",
-      icon: <SiDocker className="w-6 h-6" />,
-      skills: ['Git', 'CI/CD', 'Docker', 'Kubernetes', 'Azure']
+      title: "Testing & Quality",
+      icon: <FaCheckCircle className="w-6 h-6" />,
+      skills: [
+        { name: "NUnit", level: "Expert" },
+        { name: "xUnit", level: "Expert" },
+        { name: "Jasmine", level: "Advanced" },
+        { name: "Karma", level: "Advanced" }
+      ]
+    },
+    {
+      title: "DevOps & Cloud",
+      icon: <FaCloud className="w-6 h-6" />,
+      skills: [
+        { name: "Azure", level: "Expert" },
+        { name: "Git", level: "Expert" },
+        { name: "CI/CD", level: "Advanced" },
+        { name: "Docker", level: "Advanced" },
+        { name: "Kubernetes", level: "Advanced" },
+        { name: "Team Foundation Server", level: "Advanced" }
+      ]
     },
     {
       title: "Databases",
       icon: <FaDatabase className="w-6 h-6" />,
-      skills: ['SQL Server', 'MongoDB', 'PostgreSQL', 'Redis']
+      skills: [
+        { name: "SQL Server", level: "Expert" },
+        { name: "MongoDB", level: "Advanced" },
+        { name: "PostgreSQL", level: "Advanced" },
+        { name: "SQLite", level: "Advanced" },
+        { name: "Redis", level: "Advanced" }
+      ]
+    },
+    {
+      title: "Methodologies & Practices",
+      icon: <FaTools className="w-6 h-6" />,
+      skills: [
+        { name: "BEM", level: "Expert" },
+        { name: "SASS", level: "Expert" },
+        { name: "Agile/Scrum", level: "Expert" },
+        { name: "Microservices", level: "Advanced" }
+      ]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-primary-50">
       <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="text-center mb-12"
         >
-          Technical Skills
-        </motion.h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Comprehensive expertise in modern software development technologies and practices
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
-              className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-primary-50 rounded-lg text-primary-600">
+                <div className="text-primary-500">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold capitalize">
+                <h3 className="text-xl font-semibold text-gray-900">
                   {category.title}
                 </h3>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="grid gap-3">
                 {category.skills.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    className="px-3 py-1 bg-gray-50 text-gray-700 rounded-full text-sm
-                             border border-gray-200 hover:bg-primary-50 hover:text-primary-700
-                             hover:border-primary-100 transition-all duration-200 cursor-default"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <div
+                    key={skill.name}
+                    className="flex items-center justify-between"
                   >
-                    {skill}
-                  </motion.span>
+                    <span className="text-gray-700">{skill.name}</span>
+                    <span className={`text-sm px-2 py-1 rounded-full ${
+                      skill.level === 'Expert' 
+                        ? 'bg-primary-100 text-primary-700'
+                        : 'bg-gray-100 text-gray-700'
+                    }`}>
+                      {skill.level}
+                    </span>
+                  </div>
                 ))}
               </div>
             </motion.div>
