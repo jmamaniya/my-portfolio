@@ -1,8 +1,7 @@
-// src/components/sections/Certifications.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { certificationsData } from '../../data/certificationsData';
-import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
+import { Award, ExternalLink } from 'lucide-react';
 
 const Certifications: React.FC = () => {
   const containerVariants = {
@@ -19,7 +18,7 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
@@ -28,13 +27,16 @@ const Certifications: React.FC = () => {
           viewport={{ once: true }}
         >
           {/* Header */}
-          <motion.div className="text-center mb-16" variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r 
-                         from-primary-600 to-primary-400 bg-clip-text text-transparent">
+          <motion.div 
+            className="text-center mb-16 transform perspective-[1000px]" 
+            variants={itemVariants}
+            whileHover={{ rotateX: 10, scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1A73E8]">
               Certifications
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-primary-400 
-                         mx-auto rounded-full"/>
+            <div className="w-24 h-1 bg-[#1A73E8] mx-auto rounded-full"/>
           </motion.div>
 
           {/* Certification Grid */}
@@ -42,20 +44,32 @@ const Certifications: React.FC = () => {
             {certificationsData.certifications.map((cert) => (
               <motion.div
                 key={cert.name}
-                className="group bg-white rounded-xl shadow-lg hover:shadow-xl 
-                         transition-all duration-300 overflow-hidden"
+                className="group bg-white rounded-xl shadow-lg hover:shadow-2xl 
+                         transition-all duration-300 overflow-hidden transform perspective-[1000px]"
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateX: 5,
+                  rotateY: 2,
+                  translateZ: 20
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Certificate Header */}
                 <div className="p-6 border-b border-gray-100">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary-50 rounded-lg text-primary-600 
-                                group-hover:bg-primary-100 transition-colors">
-                      <FaCertificate className="w-6 h-6" />
-                    </div>
+                    <motion.div 
+                      className="p-3 bg-blue-50 rounded-lg text-[#1A73E8]"
+                      whileHover={{ 
+                        rotate: 360,
+                        scale: 1.1,
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Award className="w-6 h-6" />
+                    </motion.div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#1A73E8] 
                                  transition-colors">
                         {cert.name}
                       </h3>
@@ -78,14 +92,17 @@ const Certifications: React.FC = () => {
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary-600 
-                               hover:text-primary-700 font-medium group/link"
-                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center gap-2 text-[#1A73E8] hover:text-blue-700 
+                               font-medium group/link bg-blue-50 px-4 py-2 rounded-lg
+                               hover:bg-blue-100 transition-colors"
+                      whileHover={{ 
+                        x: 5,
+                        transition: { type: "spring", stiffness: 300 }
+                      }}
                     >
                       View Credential
-                      <FaExternalLinkAlt className="w-4 h-4 transition-transform 
-                                                 group-hover/link:transform 
-                                                 group-hover/link:translate-x-1" />
+                      <ExternalLink className="w-4 h-4 transition-transform 
+                                           group-hover/link:translate-x-1" />
                     </motion.a>
                   )}
                 </div>

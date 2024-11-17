@@ -24,7 +24,7 @@ const itemVariants: Variants = {
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-primary-50">
+    <section id="contact" className="py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
@@ -33,16 +33,30 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <motion.h2
+          {/* Header */}
+          <motion.div 
+            className="text-center mb-16 transform perspective-[1000px]" 
             variants={itemVariants}
-            className="text-3xl font-bold text-gray-900 mb-12 text-center"
+            whileHover={{ rotateX: 10, scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Get in Touch
-          </motion.h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1A73E8]">
+              Get in Touch
+            </h2>
+            <div className="w-24 h-1 bg-[#1A73E8] mx-auto rounded-full"/>
+          </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl 
+                     transition-all duration-300 transform perspective-[1000px]"
+            whileHover={{ 
+              scale: 1.02,
+              rotateX: 5,
+              rotateY: 2,
+              translateZ: 20
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="space-y-8">
               <ContactItem 
@@ -72,11 +86,8 @@ const Contact: React.FC = () => {
 };
 
 const ContactItem: React.FC<ContactItemProps> = ({ icon, title, content, href }) => (
-  <motion.div 
-    className="flex items-center gap-4 group hover:bg-gray-50 p-4 rounded-lg transition-all duration-300"
-    whileHover={{ x: 5 }}
-  >
-    <div className="text-primary-600 transition-colors group-hover:text-primary-700">
+  <div className="flex items-center gap-4">
+    <div className="p-2 bg-blue-50 rounded-lg text-[#1A73E8]">
       {icon}
     </div>
     <div>
@@ -86,7 +97,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, title, content, href })
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-primary-600 transition-colors"
+          className="text-gray-600 hover:text-[#1A73E8] transition-colors"
         >
           {content}
         </a>
@@ -94,7 +105,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, title, content, href })
         <p className="text-gray-600">{content}</p>
       )}
     </div>
-  </motion.div>
+  </div>
 );
 
 export default Contact;

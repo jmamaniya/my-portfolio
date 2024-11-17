@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaCloud } from 'react-icons/fa';
 
 const experienceData = {
   role: "Senior Software Engineer",
@@ -61,7 +60,7 @@ const Experience: React.FC = () => {
       index % 2 === 0 ? (
         part
       ) : (
-        <span key={index} className="font-semibold text-primary-600">
+        <span key={index} className="font-semibold text-primary-500">
           {part}
         </span>
       )
@@ -85,13 +84,13 @@ const Experience: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-2">{experienceData.role}</h3>
-            <p className="text-xl text-primary-600 mb-1">{experienceData.company}</p>
+            <p className="text-xl text-primary-500 mb-1">{experienceData.company}</p>
             <p className="text-gray-600">{experienceData.period}</p>
           </motion.div>
 
           {/* Achievement Cards */}
           <div className="space-y-12">
-            {experienceData.achievements.map((category, categoryIndex) => (
+            {experienceData.achievements.map((category) => (
               <div key={category.category} className="space-y-6">
                 {category.items.map((item, itemIndex) => (
                   <motion.div
@@ -113,7 +112,7 @@ const Experience: React.FC = () => {
                       {item.techs.map((tech) => (
                         <motion.span
                           key={tech}
-                          className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm
+                          className="px-3 py-1 bg-primary-50 text-primary-500 rounded-full text-sm
                                    hover:bg-primary-100 transition-colors"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
@@ -125,7 +124,7 @@ const Experience: React.FC = () => {
 
                     {/* Impact */}
                     {item.impact && (
-                      <div className="text-primary-600 text-sm font-medium">
+                      <div className="text-primary-500 text-sm font-medium">
                         Impact: {item.impact}
                       </div>
                     )}

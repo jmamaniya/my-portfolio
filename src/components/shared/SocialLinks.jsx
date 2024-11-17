@@ -28,7 +28,7 @@ const SocialLinks = () => {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-primary-600 transition-colors"
+          className="text-gray-600 hover:text-primary-500 transition-colors"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           aria-label={label}

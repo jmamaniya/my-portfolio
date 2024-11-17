@@ -8,6 +8,7 @@ import Footer from './components/layout/Footer'
 import FloatingResumeButton from './components/shared/FloatingResumeButton'
 import Education from './components/sections/Education'
 import Certifications from './components/sections/Certifications'
+import Recommendations from './components/sections/Recommendations'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Education />
         <Certifications /> 
         <Experience />
-        <Skills />     
+        <Skills /> 
+        <Recommendations />     
         <Contact />
       </main>
       <Footer />
