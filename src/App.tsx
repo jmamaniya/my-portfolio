@@ -1,15 +1,14 @@
-import Navbar from './components/layout/Navbar'
-import Hero from './components/sections/Hero'
-import About from './components/sections/About'
-import Skills from './components/sections/Skills'
-import Experience from './components/sections/Experience'
-import Contact from './components/sections/Contact'
-import Footer from './components/layout/Footer'
-import FloatingResumeButton from './components/shared/FloatingResumeButton'
-import Education from './components/sections/Education'
-import Certifications from './components/sections/Certifications'
-import Recommendations from './components/sections/Recommendations'
-
+import Navbar from "./components/layout/Navbar";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Skills from "./components/sections/Skills";
+import Experience from "./components/sections/Experience";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/layout/Footer";
+import FloatingResumeButton from "./components/shared/FloatingResumeButton";
+import Education from "./components/sections/Education";
+import Certifications from "./components/sections/Certifications";
+import Recommendations from "./components/sections/Recommendations";
 
 function App() {
   return (
@@ -19,16 +18,16 @@ function App() {
         <Hero />
         <About />
         <Education />
-        <Certifications /> 
+        <Certifications />
         <Experience />
-        <Skills /> 
-        <Recommendations />     
+        <Skills />
+        <Recommendations />
         <Contact />
       </main>
       <Footer />
-      <FloatingResumeButton />
+      {/* <FloatingResumeButton /> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
