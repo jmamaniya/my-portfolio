@@ -5,7 +5,6 @@ import Skills from "./components/sections/Skills";
 import Experience from "./components/sections/Experience";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
-import FloatingResumeButton from "./components/shared/FloatingResumeButton";
 import Education from "./components/sections/Education";
 import Certifications from "./components/sections/Certifications";
 import Recommendations from "./components/sections/Recommendations";

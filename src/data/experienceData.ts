@@ -7,7 +7,7 @@ export const experienceData = [
       {
         area: "Full Stack Development",
         description:
-          "Engineered and architected comprehensive full-stack applications utilizing advanced technology stacks. Developed robust backend services with C#/.NET while implementing efficient microservices through Node.js. Created intuitive frontend interfaces using modern JavaScript frameworks, enhancing overall user engagement and system reliability.",
+          "Engineered and architected comprehensive full-stack applications utilizing advanced technology stacks. Developed robust backend services with C# and .NET while implementing efficient microservices through Node.js. Created intuitive frontend interfaces using modern JavaScript frameworks, enhancing overall user engagement and system reliability.",
       },
       {
         area: "API Architecture",
@@ -121,7 +121,7 @@ export const experienceData = [
       {
         area: "Performance Management",
         description:
-          "Maintained and optimized high-traffic applications supporting 25,000+ active users. Implemented proactive monitoring solutions and established efficient support protocols for system reliability.",
+          "Maintained and optimized high-traffic applications supporting 17,000+ active users. Implemented proactive monitoring solutions and established efficient support protocols for system reliability.",
       },
       {
         area: "Agile Practices",
