@@ -99,9 +99,9 @@ const About: React.FC = () => {
 
   const Header = () => (
     <motion.div
-      className="text-center mb-16 transform perspective-[1000px]"
+      className="text-center mb-16"
       variants={itemVariants}
-      whileHover={{ rotateX: 10, scale: 1.05 }}
+      whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1A73E8]">
@@ -113,29 +113,45 @@ const About: React.FC = () => {
 
   const Description = () => (
     <motion.div
-      className="max-w-4xl mx-auto mb-20 transform perspective-[1000px]"
+      className="max-w-4xl mx-auto mb-20 relative"
       variants={itemVariants}
-      whileHover={{ rotateX: 5, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
     >
-      <div className="bg-white rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-        <div className="space-y-6">
+      {/* Background pattern */}
+      <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-[#1A73E8]/20 rounded" />
+      <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-[#1A73E8]/20 rounded" />
+
+      <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 relative">
+        {/* Corner accent */}
+        <div className="absolute top-0 right-0 w-20 h-20">
+          <div className="absolute top-4 right-4 w-2 h-2 bg-[#1A73E8] rounded-full" />
+          <div className="absolute top-4 right-8 w-2 h-2 bg-[#1A73E8]/50 rounded-full" />
+          <div className="absolute top-8 right-4 w-2 h-2 bg-[#1A73E8]/50 rounded-full" />
+        </div>
+
+        <div className="space-y-8">
           {[
             "With over 8.5 years of experience in software development, I've cultivated a deep understanding of the full development lifecycle, from concept to deployment. My journey has taken me through various roles at prominent companies like LexisNexis and Motorola Solutions, where I've consistently delivered high-impact solutions.",
             "My technical expertise spans both frontend and backend development, with a strong focus on performance optimization and scalable architecture. I've successfully led projects that resulted in significant improvements in user engagement and system efficiency.",
             "Beyond coding, I'm passionate about mentoring junior developers and contributing to team growth. I stay current with emerging technologies and best practices, ensuring that my solutions are not just effective today but sustainable for the future.",
           ].map((text, index) => (
-            <motion.p
+            <motion.div
               key={index}
-              className="text-lg text-gray-600 leading-relaxed"
+              className="relative pl-6 border-l-2 border-[#1A73E8]/20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              {text}
-            </motion.p>
+              {/* Dot accent */}
+              <div className="absolute left-[-5px] top-0 w-2 h-2 bg-[#1A73E8] rounded-full" />
+              <p className="text-lg text-gray-600 leading-relaxed">{text}</p>
+            </motion.div>
           ))}
+        </div>
+
+        {/* Bottom accent */}
+        <div className="absolute bottom-4 left-12 right-12">
+          <div className="h-1 w-full bg-[#1A73E8]/5 rounded-full" />
         </div>
       </div>
     </motion.div>
@@ -146,21 +162,20 @@ const About: React.FC = () => {
       {expertise.map((item, index) => (
         <motion.div
           key={item.title}
-          className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group transform perspective-[1000px]"
+          className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
           variants={itemVariants}
-          whileHover={{
-            scale: 1.05,
-            rotateY: 5,
-            rotateX: 5,
-            translateZ: 20,
-          }}
+          whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300 }}
           custom={index}
         >
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-blue-50 rounded-lg text-[#1A73E8] group-hover:bg-[#1A73E8] group-hover:text-white transition-colors">
+            <motion.div
+              className="p-3 bg-blue-50 rounded-lg text-[#1A73E8]"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
+            >
               {item.icon}
-            </div>
+            </motion.div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {item.title}
@@ -177,14 +192,9 @@ const About: React.FC = () => {
 
   const Achievements = () => (
     <motion.div
-      className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform perspective-[1000px]"
+      className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300"
       variants={itemVariants}
-      whileHover={{
-        scale: 1.02,
-        rotateX: 5,
-        translateZ: 20,
-      }}
-      transition={{ type: "spring", stiffness: 300 }}
+      whileHover={{ scale: 1.02 }}
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {achievements.map((achievement, index) => (
@@ -192,28 +202,23 @@ const About: React.FC = () => {
             key={achievement.label}
             className="text-center group"
             variants={itemVariants}
-            whileHover={{
-              scale: 1.1,
-              rotateY: 10,
-              translateZ: 30,
-            }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.05 }}
             custom={index}
           >
-            <div className="mb-4">
-              <motion.div
-                className="p-3 bg-blue-50 rounded-full w-12 h-12 mx-auto flex items-center justify-center text-[#1A73E8] group-hover:bg-[#1A73E8] group-hover:text-white transition-colors shadow-md"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                {achievement.icon}
-              </motion.div>
-              <div className="text-4xl font-bold text-[#1A73E8] mt-4 mb-2">
-                {achievement.number}
-              </div>
-              <div className="h-1 w-12 mx-auto bg-[#1A73E8] rounded-full transform origin-left transition-all duration-300 group-hover:w-full" />
+            <motion.div
+              className="p-3 bg-blue-50 rounded-full w-12 h-12 mx-auto flex items-center justify-center text-[#1A73E8]"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
+            >
+              {achievement.icon}
+            </motion.div>
+            <div className="text-4xl font-bold text-[#1A73E8] mt-4 mb-2">
+              {achievement.number}
             </div>
-            <p className="text-gray-600 font-medium">{achievement.label}</p>
+            <div className="h-1 w-12 mx-auto bg-[#1A73E8] rounded-full" />
+            <p className="text-gray-600 font-medium mt-4">
+              {achievement.label}
+            </p>
           </motion.div>
         ))}
       </div>
@@ -221,13 +226,13 @@ const About: React.FC = () => {
   );
 
   return (
-    <section id="about" className="py-24 bg-[#F8FAFC] overflow-hidden">
+    <section className="py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
         >
           <Header />
           <Description />

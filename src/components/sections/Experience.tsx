@@ -65,7 +65,7 @@ const Experience: React.FC = () => {
                   {experience.achievements.map((achievement, index) => (
                     <motion.div
                       key={index}
-                      className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-all duration-300"
+                      className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
                       variants={itemVariants}
                     >
                       <h4 className="text-lg font-semibold text-gray-800 mb-3">
