@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-[#F8FAFC] relative">
+    <section id="home" className="min-h-screen bg-[#F8FAFC] relative">
       <div className="container mx-auto px-4 min-h-screen flex flex-col justify-center items-center">
         <motion.div
           className="max-w-4xl text-center"

@@ -226,7 +226,7 @@ const About: React.FC = () => {
   );
 
   return (
-    <section className="py-24 bg-[#F8FAFC] overflow-hidden">
+    <section id="about" className="py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
