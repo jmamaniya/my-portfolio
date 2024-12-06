@@ -1,6 +1,7 @@
 export const skillsData = {
   programmingLanguages: {
     title: "Programming Languages & Core Technologies",
+
     skills: [
       { name: "C#", level: "Expert" },
       { name: "JavaScript", level: "Expert" },
@@ -13,6 +14,7 @@ export const skillsData = {
   frameworks: {
     title: "Frameworks & Libraries",
     skills: [
+      { name: "React", level: "Expert" },
       { name: "Angular", level: "Expert" },
       { name: "GraphQL", level: "Advanced" },
       { name: "Node.js", level: "Advanced" },
@@ -24,6 +26,8 @@ export const skillsData = {
       { name: "Entity Framework", level: "Expert" },
       { name: "Bootstrap", level: "Advanced" },
       { name: "WPF", level: "Advanced" },
+      { name: "Redux", level: "Advanced" },
+      { name: "React Router", level: "Advanced" },
     ],
   },
   testing: {
@@ -33,6 +37,8 @@ export const skillsData = {
       { name: "xUnit", level: "Expert" },
       { name: "Jasmine", level: "Advanced" },
       { name: "Karma", level: "Advanced" },
+      { name: "Jest", level: "Advanced" },
+      { name: "React Testing Library", level: "Advanced" },
     ],
   },
   devOps: {
@@ -44,6 +50,7 @@ export const skillsData = {
       { name: "Kubernetes", level: "Advanced" },
       { name: "Azure", level: "Expert" },
       { name: "Team Foundation Server", level: "Advanced" },
+      { name: "Azure DevOps", level: "Advanced" },
     ],
   },
   databases: {
@@ -57,12 +64,16 @@ export const skillsData = {
     ],
   },
   methodologies: {
-    title: "Methodologies & Practices",
+    title: "Methodologies & Architecture",
     skills: [
       { name: "BEM", level: "Expert" },
       { name: "SASS", level: "Expert" },
       { name: "Agile Scrum", level: "Expert" },
-      { name: "Microservices", level: "Advanced" },
+      { name: "Microservices Architecture", level: "Advanced" },
+      { name: "Domain-Driven Design", level: "Advanced" },
+      { name: "Event-Driven Architecture", level: "Advanced" },
+      { name: "API Gateway Pattern", level: "Advanced" },
+      { name: "Service Mesh", level: "Advanced" },
     ],
   },
 };
