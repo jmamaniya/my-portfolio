@@ -2,7 +2,7 @@ export const portfolioData = {
   personal: {
     name: "Jinal Mamaniya",
     title: "Senior Software Engineer",
-    email: "jmamaniya2022@gmail.com",
+    email: "mamaniya.jinals@gmail.com",
     linkedin: "http://www.linkedin.com/in/jinal-mamaniya",
   },
   skills: {

@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
               label="LinkedIn"
             />
             <SocialLink
-              href="mailto:jmamaniya2022@gmail.com"
+              href="mailto:mamaniya.jinals@gmail.com"
               icon={<HiMail className="w-6 h-6" />}
               label="Email"
             />
